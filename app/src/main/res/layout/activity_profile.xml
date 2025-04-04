@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Avatar -->
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avatar"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_border"/>
+
+    <!-- Thông tin cá nhân -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView android:text="Mã ID" style="@style/TextLabel"/>
+        <TextView android:id="@+id/tvId" style="@style/TextValue"/>
+
+        <TextView android:text="Tên đăng nhập" style="@style/TextLabel"/>
+        <TextView android:id="@+id/tvUsername" style="@style/TextValue"/>
+
+        <TextView android:text="Họ tên" style="@style/TextLabel"/>
+        <TextView android:id="@+id/tvFullName" style="@style/TextValue"/>
+
+        <TextView android:text="Email" style="@style/TextLabel"/>
+        <TextView android:id="@+id/tvEmail" style="@style/TextValue"/>
+
+        <TextView android:text="Giới tính" style="@style/TextLabel"/>
+        <TextView android:id="@+id/tvGender" style="@style/TextValue"/>
+    </LinearLayout>
+
+    <!-- Nút Đăng xuất -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG XUẤT"
+        android:backgroundTint="@color/red"
+        android:textColor="@android:color/white"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>
