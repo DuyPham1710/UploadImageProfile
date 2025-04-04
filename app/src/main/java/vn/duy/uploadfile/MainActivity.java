@@ -43,12 +43,14 @@ import vn.duy.uploadfile.models.ImageUpload;
 public class MainActivity extends AppCompatActivity {
     Button btnChoose, btnUpload;
     ImageView imageViewChoose, imageViewUpload;
+    ImageView imgBack;
     EditText editTextUserName;
     TextView textViewUsername;
     private Uri mUri;
     private ProgressDialog mProgressDialog;
     public static final int MY_REQUEST_CODE = 100;
     public static final String TAG = MainActivity.class.getName();
+    public static String avatar;
     public static String[] storge_permissions = {
             android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
             android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -114,14 +116,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
     private void AnhXa() {
         btnChoose = findViewById(R.id.btnChoose);
         btnUpload = findViewById(R.id.btnUpload);
-        imageViewUpload = findViewById(R.id.imgMultipart);
+        imageViewChoose = findViewById(R.id.imgChoose);
+        imgBack = findViewById(R.id.imgBack);
         editTextUserName = findViewById(R.id.editUserName);
         textViewUsername = findViewById(R.id.tvUsername);
-        imageViewChoose = findViewById(R.id.imgChoose);
     }
     public static String[] permissions() {
         String[] p;
@@ -190,7 +200,8 @@ public class MainActivity extends AppCompatActivity {
                         textViewUsername.setText(imageUpload.get(i).getUsername());
                         Glide.with(MainActivity.this)
                                 .load(imageUpload.get(i).getAvatar())
-                                .into(imageViewUpload);
+                                .into(imageViewChoose);
+                        avatar = imageUpload.get(i).getAvatar();
                         Toast.makeText(MainActivity.this, "Thành công", Toast.LENGTH_LONG).show();
                     }
                 }

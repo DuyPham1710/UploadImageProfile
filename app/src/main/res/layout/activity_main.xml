@@ -10,6 +10,30 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Back"
+            android:padding="5dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Back"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/editUserName"
         android:layout_width="match_parent"
@@ -24,15 +48,16 @@
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
         android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/pro_trung"/>
 
     <Button
         android:id="@+id/btnChoose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CHỌN FILE"
-        android:background="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"
+
         android:layout_marginTop="10dp"/>
 
     <Button
@@ -40,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UPLOAD IMAGES"
-        android:background="@android:color/holo_purple"
+        android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"
         android:layout_marginTop="5dp"/>
 
@@ -52,12 +77,5 @@
         android:textSize="16sp"
         android:layout_marginTop="10dp"/>
 
-    <ImageView
-        android:id="@+id/imgMultipart"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher"/>
 
 </LinearLayout>
